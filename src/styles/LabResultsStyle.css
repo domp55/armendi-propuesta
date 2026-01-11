@@ -1,0 +1,61 @@
+.lab-card {
+    background: #ffffff;
+    padding: 20px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    overflow-y: auto;
+    margin: 0 auto;
+  }
+ 
+  .lab-card .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+
+  .lab-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lab-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    font-size: 15px;
+    color: #2d3748;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .lab-item:hover {
+    background: #f2f6f9;
+  }
+  
+  .download-icon {
+    color: #1a1a1a;
+    opacity: 0.75;
+    transition: 0.2s;
+  }
+  
+  .download-icon:hover {
+    opacity: 1;
+  }
+
+  .lab-card::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .lab-card::-webkit-scrollbar-thumb {
+    background: #0f2537; 
+    border-radius: 4px;
+  }
+  
+  .lab-card::-webkit-scrollbar-track {
+    background: #e2e8f0;
+  }
+  

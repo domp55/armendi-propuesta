@@ -1,0 +1,63 @@
+.diagnostic-card {
+    background: #ffffff;
+    padding: 20px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .dia-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom:24px;
+    color: #1a1a1a;
+  }
+  
+  .diagnostic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .diagnostic-table thead {
+    background: #f5f7fa;
+    border-radius: 12px;
+  }
+  
+  .diagnostic-table thead th {
+    text-align: left;
+    padding: 14px 12px;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .diagnostic-table tbody tr {
+    border-bottom: 1px solid #edf2f7;
+  }
+  
+  .diagnostic-table tbody td {
+    padding: 14px 12px;
+    color: #2d3748;
+  }
+  
+  .diagnostic-card {
+    max-height: 360px; 
+    overflow-y: auto;
+  }
+  
+  .diagnostic-card::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .diagnostic-card::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+  }
+  
+  .diagnostic-card::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  

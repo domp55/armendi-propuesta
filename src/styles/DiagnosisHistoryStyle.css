@@ -1,0 +1,48 @@
+.dh-container {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .dh-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+  }
+  .dh-main-block {
+    background: #F3E8FF; 
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .dh-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+  
+  .dh-chart-col {
+    width: 100%;
+  }
+
+  .dh-vital-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    /* Todas las tarjetas centradas por defecto */
+    justify-items: center;
+}
+
+/* Primera tarjeta → alineada a la izquierda */
+.dh-vital-grid > :first-child {
+    justify-self: start;
+}
+
+/* Última tarjeta → alineada a la derecha */
+.dh-vital-grid > :last-child {
+    justify-self: end;
+}

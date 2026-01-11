@@ -1,0 +1,66 @@
+.vital-card {
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 230px;
+    background: #ffe5ef; /* se sobrescribe con el prop color */
+  }
+  
+  /* ICONO más grande y centrado */
+  .vital-icon {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vital-icon img {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /* CONTENEDOR DE TEXTO */
+  .vital-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  /* Título tipo “Heart Rate” */
+  .vital-title {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  /* VALOR “78 bpm” MÁS GRANDE */
+  .vital-value {
+    margin: 0;
+    font-size: 30px;           /* antes 26px */
+    font-weight: 800;          /* más grueso */
+    color: #0a2540;            /* azul oscuro tipo dashboard */
+  }
+  
+  /* STATUS (más pequeño y más suave) */
+  .vital-status {
+    margin: 0;
+    font-size: 13px;           /* más pequeño */
+    color: #666;
+    opacity: 0.8;              /* más suave */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .vital-status::before {
+    font-size: 10px;
+    opacity: 0.8;
+  }
+  

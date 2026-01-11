@@ -1,0 +1,104 @@
+.employee-card {
+    height: 110px;
+    align-items: center;
+    background: #f9fbfc;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e6ecf1;
+    max-width: 420px;
+}
+
+.employee-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== ESTADOS ===== */
+.employee-card.present {
+    background: #eef7f2;
+    border-color: #d6ebe0;
+}
+
+.employee-card.absent {
+    background: #fdf1f1;
+    border-color: #f2d6d6;
+}
+
+/* ===== AVATAR ===== */
+.employee-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #4a5568;
+    background: #e9eff5;
+    flex-shrink: 0;
+}
+
+.present .employee-avatar {
+    background: #dff2e8;
+    color: #2f7d5a;
+}
+
+.absent .employee-avatar {
+    background: #f6dddd;
+    color: #a94442;
+}
+
+.employee-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.employee-name {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    max-height: 2.4em;
+    overflow: hidden;
+}
+
+.employee-position {
+    font-size: 13px;
+    line-height: 1.2;
+    max-height: 2.4em;
+    overflow: hidden;
+}
+
+
+.employee-id {
+    font-size: 12px;
+    color: #a0aec0;
+    margin: 0;
+}
+
+/* ===== BADGE ===== */
+.attendance-badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.present .attendance-badge {
+    background: #e1f3ea;
+    color: #2f7d5a;
+}
+
+.absent .attendance-badge {
+    background: #f8e3e3;
+    color: #a94442;
+}

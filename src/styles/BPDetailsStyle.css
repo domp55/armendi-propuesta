@@ -1,0 +1,52 @@
+    .bp-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  /* puntos de color */
+  .bp-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .systolic-dot {
+    background-color: #d14eea;
+  }
+  
+  .diastolic-dot {
+    background-color: #7057ff;
+  }
+  
+  .bp-label {
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .bp-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  /* Estado con flecha */
+  .bp-status {
+    font-size: 13px;
+    color: #555; /* color general */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .bp-status .arrow {
+    font-size: 14px;
+  }
+  
+  /* línea divisora */
+  .bp-divider {
+    height: 1px;
+    width: 100%;
+    background: #e4e0ee;
+  }
+  

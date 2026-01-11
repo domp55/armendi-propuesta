@@ -1,0 +1,36 @@
+.map-page {
+  padding: 4px;
+  background: #f7f9fb;
+  height: calc(100vh - 80px);
+}
+
+.map-page h2 {
+  margin-bottom: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Popup */
+.mine-popup {
+  min-width: 180px;
+}
+
+.mine-popup h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.mine-popup p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
+}

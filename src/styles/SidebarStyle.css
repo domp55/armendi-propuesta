@@ -1,0 +1,107 @@
+.sidebar {
+    width: 280px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  .patients-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 18px;
+  }
+  
+  .sidebar-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+  }
+  
+  .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-btn:hover {
+    color: #111;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);}
+ 
+  .sidebar li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .sidebar li:hover {
+    background: #f5f7f8;
+  }
+  
+  .sidebar li.active {
+    background: #d8f9f5; 
+  }
+  
+  .sidebar li img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  .sidebar li p {
+    margin: 0;
+    font-weight: 500;
+    color: #222;
+    font-size: 15px;
+  }
+  
+  .sidebar li span {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+  }
+  
+  .menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-btn:hover {
+    color: #555;
+  }
+  

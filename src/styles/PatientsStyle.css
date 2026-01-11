@@ -1,0 +1,35 @@
+.page-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #f7f9fb;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* izquierda grande | derecha pequeña */
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  
+  .diagnosis-history-wrapper {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  
+  .patient-info-wrapper {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+  }
+  
+  .diagnostic-list-wrapper {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+  
+  .lab-results-wrapper {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+  
