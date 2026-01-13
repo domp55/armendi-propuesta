@@ -1,15 +1,17 @@
 .employee-card {
-    height: 110px;
+    height: auto;
+    min-height: 110px;
     align-items: center;
     background: #f9fbfc;
     border-radius: 14px;
     padding: 16px 20px;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e6ecf1;
     max-width: 420px;
+    position: relative;
 }
 
 .employee-card:hover {
@@ -26,6 +28,12 @@
 .employee-card.absent {
     background: #fdf1f1;
     border-color: #f2d6d6;
+}
+
+.employee-card.fired {
+    background: #f5f5f5;
+    border-color: #d1d5db;
+    opacity: 0.85;
 }
 
 /* ===== AVATAR ===== */
@@ -53,11 +61,17 @@
     color: #a94442;
 }
 
+.fired .employee-avatar {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
 .employee-details {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 150px;
 }
 
 
@@ -74,8 +88,25 @@
     line-height: 1.2;
     max-height: 2.4em;
     overflow: hidden;
+    color: #4b5563;
+    margin-bottom: 4px;
 }
 
+.employee-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.employee-department,
+.employee-sector {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #6b7280;
+}
 
 .employee-id {
     font-size: 12px;
@@ -101,4 +132,19 @@
 .absent .attendance-badge {
     background: #f8e3e3;
     color: #a94442;
+}
+
+.fired .attendance-badge {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+/* ===== FIRED DATE ===== */
+.fired-date {
+    width: 100%;
+    font-size: 11px;
+    color: #9ca3af;
+    padding-top: 8px;
+    border-top: 1px dashed #d1d5db;
+    margin-top: 4px;
 }

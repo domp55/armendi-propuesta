@@ -11,7 +11,7 @@ import {
 } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
-import logo from "../img/TestLogo.png";
+import logo from "../img/armendi_logo.jpg";
 import doctorImg from "../img/ing.webp";
 
 export default function Header() {
