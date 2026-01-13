@@ -4,7 +4,7 @@ import { FiX, FiUsers, FiBox, FiTool, FiBarChart2, FiMap, FiMessageSquare, FiExt
 import logo from "../img/armendi_logo.jpg";
 
 export default function QRModal({ onClose }) {
-    const deploymentUrl = "https://armendi-propuesta-ljdzj9vq8-domp55s-projects.vercel.app";
+    const deploymentUrl = "https://armendi-propuesta-git-main-domp55s-projects.vercel.app";
 
     return (
         <div className="qr-modal-overlay" onClick={onClose}>
