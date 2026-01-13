@@ -1,12 +1,12 @@
 .employee-card {
     height: auto;
-    min-height: 110px;
+    min-height: 100px;
     background: #f9fbfc;
     border-radius: 14px;
-    padding: 16px 20px;
+    padding: 16px;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e6ecf1;
     position: relative;
@@ -36,13 +36,13 @@
 
 /* ===== AVATAR ===== */
 .employee-avatar {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     color: #4a5568;
     background: #e9eff5;
@@ -69,46 +69,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 150px;
+    min-width: 120px;
 }
 
 
 .employee-name {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.2;
-    max-height: 2.4em;
-    overflow: hidden;
     margin-bottom: 2px;
 }
 
 .employee-position {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.2;
-    max-height: 2.4em;
-    overflow: hidden;
     color: #4b5563;
     margin-bottom: 4px;
 }
 
 .employee-meta {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
     margin-bottom: 4px;
 }
 
 .employee-department,
 .employee-sector {
-    font-size: 11px;
-    padding: 2px 8px;
+    font-size: 10px;
+    padding: 2px 6px;
     border-radius: 4px;
     background: rgba(0, 0, 0, 0.05);
     color: #6b7280;
 }
 
 .employee-id {
-    font-size: 12px;
+    font-size: 11px;
     color: #a0aec0;
     margin: 0;
 }
@@ -128,10 +124,10 @@
 
 /* ===== BADGE ===== */
 .attendance-badge {
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 999px;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
     white-space: nowrap;
 }
@@ -186,4 +182,64 @@
     padding-top: 8px;
     border-top: 1px dashed #d1d5db;
     margin-top: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .employee-card {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .employee-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .employee-name {
+        font-size: 13px;
+    }
+
+    .employee-position {
+        font-size: 11px;
+    }
+
+    .employee-department,
+    .employee-sector {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+
+    .attendance-badge {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .edit-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .edit-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .employee-card {
+        padding: 10px;
+    }
+
+    .employee-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .card-right {
+        flex-direction: row;
+        align-items: center;
+    }
 }
