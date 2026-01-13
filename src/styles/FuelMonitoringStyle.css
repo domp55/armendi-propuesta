@@ -1,0 +1,390 @@
+/* ===== FUEL MONITORING SECTION ===== */
+.fuel-monitoring-section {
+    margin-bottom: 24px;
+}
+
+.fuel-monitoring-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.fuel-monitoring-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0d1b2a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fuel-monitoring-header h3 svg {
+    color: #3b82f6;
+}
+
+/* Tank Cards Grid */
+.fuel-tanks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.fuel-tank-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fuel-tank-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.tank-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.tank-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0d1b2a;
+    margin-bottom: 4px;
+}
+
+.tank-info .tank-location {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.tank-status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tank-status-badge.optimal {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.tank-status-badge.warning {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.tank-status-badge.critical {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* Tank Level Visualization */
+.tank-level-container {
+    margin-bottom: 16px;
+}
+
+.tank-level-bar {
+    height: 24px;
+    background: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tank-level-fill {
+    height: 100%;
+    border-radius: 12px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.tank-level-fill.diesel {
+    background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.tank-level-fill.gasoline {
+    background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+}
+
+.tank-level-fill.hydraulic {
+    background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.tank-level-fill.grease {
+    background: linear-gradient(90deg, #a78bfa 0%, #8b5cf6 100%);
+}
+
+.tank-level-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tank-level-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.tank-level-details span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tank-level-details .current-level {
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+/* Tank Stats */
+.tank-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.tank-stat {
+    text-align: center;
+}
+
+.tank-stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d1b2a;
+}
+
+.tank-stat-label {
+    font-size: 0.7rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Fuel Consumption Summary */
+.fuel-consumption-summary {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    margin-bottom: 24px;
+}
+
+.consumption-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.consumption-header h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+.consumption-period {
+    font-size: 0.8rem;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.consumption-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.consumption-stat-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.consumption-stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.consumption-stat-icon.diesel {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.consumption-stat-icon.gasoline {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.consumption-stat-icon.daily {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.consumption-stat-icon.monthly {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.consumption-stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0d1b2a;
+    margin-bottom: 4px;
+}
+
+.consumption-stat-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.consumption-stat-trend {
+    font-size: 0.7rem;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.consumption-stat-trend.up {
+    color: #ef4444;
+}
+
+.consumption-stat-trend.down {
+    color: #10b981;
+}
+
+/* Recent Activity */
+.fuel-recent-activity {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.activity-header h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.activity-item:hover {
+    background: #f1f5f9;
+}
+
+.activity-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.activity-icon.supply {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.activity-icon.dispatch {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.activity-details {
+    flex: 1;
+}
+
+.activity-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #0d1b2a;
+}
+
+.activity-meta {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.activity-amount {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.activity-amount.positive {
+    color: #059669;
+}
+
+.activity-amount.negative {
+    color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .consumption-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fuel-tanks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .consumption-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
