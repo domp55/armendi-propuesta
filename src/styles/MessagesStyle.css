@@ -310,21 +310,121 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
+    .messages-container {
+        flex-direction: column;
+        height: auto;
+        min-height: calc(100vh - 92px);
+    }
+
     .messages-sidebar {
-        display: none;
+        width: 100%;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .compose-btn {
+        margin-bottom: 0;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .folders-list {
+        flex-direction: row;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .folder-item {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        border-radius: 20px;
+        background: #f3f4f6;
+    }
+
+    .folder-item.active {
+        background: #3b82f6;
+        color: #ffffff;
     }
 
     .messages-list {
-        width: 300px;
+        width: 100%;
+        border-right: none;
+        max-height: 50vh;
     }
 }
 
 @media (max-width: 768px) {
+    .messages-container {
+        padding: 8px;
+    }
+
+    .messages-sidebar {
+        padding: 10px;
+    }
+
+    .compose-btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .folders-list {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+    }
+
+    .folder-item {
+        flex-shrink: 0;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .folder-count {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+
     .messages-list {
+        max-height: 40vh;
         width: 100%;
     }
 
     .message-detail {
         display: none;
+    }
+
+    .message-detail.mobile-visible {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ffffff;
+        z-index: 100;
+        padding: 16px;
+    }
+
+    .message-item {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .folder-item {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+
+    .folder-item svg {
+        width: 14px;
+        height: 14px;
     }
 }

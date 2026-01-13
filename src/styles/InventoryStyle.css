@@ -263,12 +263,64 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
+    .inventory-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
     .inventory-sidebar {
+        width: 100%;
+        min-height: auto;
+        margin: 0 0 16px 0;
+        border-radius: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .inventory-sidebar .sidebar-header {
+        width: 100%;
+        padding: 8px 12px;
+        border-bottom: none;
+        font-size: 0.9rem;
+    }
+
+    .inventory-sidebar .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .inventory-sidebar .sidebar-item {
+        margin: 0;
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        background: #f0f4f8;
+    }
+
+    .inventory-sidebar .sidebar-item.active {
+        background: #3498db;
+        color: #ffffff;
+    }
+
+    .sidebar-stats {
         display: none;
+    }
+
+    .inventory-main {
+        padding: 0 10px;
     }
 }
 
 @media (max-width: 768px) {
+    .inventory-container {
+        padding: 8px;
+    }
+
     .inventory-header {
         flex-direction: column;
         gap: 16px;
@@ -281,5 +333,48 @@
 
     .inventory-actions {
         width: 100%;
+    }
+
+    .inventory-sidebar .sidebar-menu {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+    }
+
+    .inventory-sidebar .sidebar-item {
+        flex-shrink: 0;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .inventory-table th,
+    .inventory-table td {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+    }
+
+    .id-cell {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inventory-sidebar {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .inventory-sidebar .sidebar-item {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    .inventory-table-wrapper {
+        border-radius: 12px;
+        overflow-x: auto;
+    }
+
+    .inventory-table {
+        min-width: 600px;
     }
 }
