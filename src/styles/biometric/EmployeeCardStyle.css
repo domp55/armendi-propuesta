@@ -1,7 +1,6 @@
 .employee-card {
     height: auto;
     min-height: 110px;
-    align-items: center;
     background: #f9fbfc;
     border-radius: 14px;
     padding: 16px 20px;
@@ -10,7 +9,6 @@
     gap: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e6ecf1;
-    max-width: 420px;
     position: relative;
 }
 
@@ -81,6 +79,7 @@
     line-height: 1.2;
     max-height: 2.4em;
     overflow: hidden;
+    margin-bottom: 2px;
 }
 
 .employee-position {
@@ -114,6 +113,19 @@
     margin: 0;
 }
 
+.biometric-badge {
+    color: #10b981;
+    font-weight: 500;
+}
+
+/* ===== CARD RIGHT ===== */
+.card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
 /* ===== BADGE ===== */
 .attendance-badge {
     padding: 6px 12px;
@@ -137,6 +149,33 @@
 .fired .attendance-badge {
     background: #e5e7eb;
     color: #6b7280;
+}
+
+/* ===== EDIT BUTTON ===== */
+.edit-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.edit-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+}
+
+.edit-btn:hover {
+    background: #3b82f6;
+    color: #ffffff;
 }
 
 /* ===== FIRED DATE ===== */

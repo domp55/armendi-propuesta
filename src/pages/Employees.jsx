@@ -1,9 +1,11 @@
 import EmployeeCard from "../biometricComponents/cards/EmployeeCard";
 import AttendanceSummary from "../biometricComponents/fragments/AttendanceSummary";
 import SidebarBiometric from "../biometricComponents/fragments/SidebarBiometric";
+import EmployeeModal from "../biometricComponents/modals/EmployeeModal";
 import Header from "../components/Header";
 import "../styles/biometric/EmployeesStyle.css";
 import { useEffect, useState } from "react";
+import { FiPlus, FiRefreshCw } from "react-icons/fi";
 
 // Nombres y apellidos para generar empleados
 const firstNames = [
@@ -33,6 +35,13 @@ const positions = [
 
 const departments = ["Extracción", "Transporte", "Perforación", "Mantenimiento", "Planta", "Caminos", "Administración"];
 const sectors = ["Sector A", "Sector B", "Sector C", "Sector D", "Planta Procesadora", "Almacén Central"];
+const schedules = [
+    "06:00 - 14:00 (Turno Mañana)",
+    "14:00 - 22:00 (Turno Tarde)",
+    "22:00 - 06:00 (Turno Noche)",
+    "07:00 - 15:00 (Administrativo)",
+    "Rotativo (7x7)"
+];
 
 // Generar empleados mock para la demo
 function generateEmployees(count) {
@@ -43,6 +52,7 @@ function generateEmployees(count) {
         const position = positions[Math.floor(Math.random() * positions.length)];
         const department = departments[Math.floor(Math.random() * departments.length)];
         const sector = sectors[Math.floor(Math.random() * sectors.length)];
+        const schedule = schedules[Math.floor(Math.random() * schedules.length)];
 
         // 5% de empleados despedidos
         const isFired = Math.random() < 0.05;
@@ -50,10 +60,17 @@ function generateEmployees(count) {
         employees.push({
             id: `E${String(i).padStart(3, '0')}`,
             name: `${firstName} ${lastName}`,
+            dni: `${Math.floor(Math.random() * 90000000) + 10000000}`,
+            email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@armendi.com`,
+            phone: `+593 9${Math.floor(Math.random() * 90000000) + 10000000}`,
             position: position,
             department: department,
             sector: sector,
-            attendance: isFired ? -1 : (Math.random() < 0.92 ? 0 : 1), // -1 = despedido, 0 = presente, 1 = ausente
+            salary: Math.floor(Math.random() * 2000) + 500,
+            schedule: schedule,
+            startDate: `202${Math.floor(Math.random() * 5) + 1}-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`,
+            biometricId: Math.random() > 0.3 ? `ZK-${Math.floor(Math.random() * 9000) + 1000}` : "",
+            attendance: isFired ? -1 : (Math.random() < 0.92 ? 0 : 1),
             isFired: isFired,
             firedDate: isFired ? "2026-01-" + String(Math.floor(Math.random() * 12) + 1).padStart(2, '0') : null
         });
@@ -64,9 +81,11 @@ function generateEmployees(count) {
 export default function Employees() {
     const [employees, setEmployees] = useState([]);
     const [filter, setFilter] = useState({ type: "all", value: null });
+    const [showModal, setShowModal] = useState(false);
+    const [editingEmployee, setEditingEmployee] = useState(null);
 
     useEffect(() => {
-        const generatedEmployees = generateEmployees(120);
+        const generatedEmployees = generateEmployees(80);
         setEmployees(generatedEmployees);
     }, []);
 
@@ -77,12 +96,10 @@ export default function Employees() {
 
     // Aplicar filtros
     const filteredEmployees = employees.filter(emp => {
-        // Primero filtramos por despedidos si es necesario
         if (filter.type === "fired") {
             return emp.isFired === true;
         }
 
-        // Si no es filtro de despedidos, excluimos a los despedidos
         if (emp.isFired) return false;
 
         switch (filter.type) {
@@ -103,11 +120,45 @@ export default function Employees() {
         }
     });
 
-    // Estadísticas (excluyendo despedidos)
+    // Estadísticas
     const activeEmployees = employees.filter(e => !e.isFired);
     const presentCount = activeEmployees.filter(e => e.attendance === 0).length;
     const absentCount = activeEmployees.filter(e => e.attendance === 1).length;
     const firedCount = employees.filter(e => e.isFired).length;
+
+    // Handlers
+    const handleAddEmployee = () => {
+        setEditingEmployee(null);
+        setShowModal(true);
+    };
+
+    const handleEditEmployee = (employee) => {
+        setEditingEmployee(employee);
+        setShowModal(true);
+    };
+
+    const handleSaveEmployee = (employeeData) => {
+        if (editingEmployee) {
+            // Editar existente
+            setEmployees(prev => prev.map(emp =>
+                emp.id === editingEmployee.id ? { ...emp, ...employeeData } : emp
+            ));
+        } else {
+            // Agregar nuevo
+            setEmployees(prev => [...prev, employeeData]);
+        }
+        setShowModal(false);
+        setEditingEmployee(null);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setEditingEmployee(null);
+    };
+
+    const syncBiometric = () => {
+        alert("Sincronizando con dispositivos ZKTeco...\n\nEsta funcionalidad se conectará con los relojes biométricos para:\n• Descargar registros de asistencia\n• Sincronizar nuevos empleados\n• Actualizar huellas y rostros");
+    };
 
     return (
         <div>
@@ -123,13 +174,26 @@ export default function Employees() {
                 />
                 <main className="main-content">
                     <div className="diagnosis-history-wrapper">
-                        <AttendanceSummary
-                            presentCount={presentCount}
-                            absentCount={absentCount}
-                            totalCount={activeEmployees.length}
-                        />
+                        {/* Header con acciones */}
+                        <div className="employees-header">
+                            <AttendanceSummary
+                                presentCount={presentCount}
+                                absentCount={absentCount}
+                                totalCount={activeEmployees.length}
+                            />
+                            <div className="employees-actions">
+                                <button className="btn-sync" onClick={syncBiometric}>
+                                    <FiRefreshCw size={18} />
+                                    Sincronizar ZKTeco
+                                </button>
+                                <button className="btn-add" onClick={handleAddEmployee}>
+                                    <FiPlus size={18} />
+                                    Nuevo Empleado
+                                </button>
+                            </div>
+                        </div>
 
-                        {/* Mostrar filtro activo */}
+                        {/* Filtro activo */}
                         {filter.type !== "all" && (
                             <div className="active-filter-badge">
                                 <span>
@@ -151,12 +215,22 @@ export default function Employees() {
                                 <EmployeeCard
                                     key={employee.id}
                                     employee={employee}
+                                    onEdit={() => handleEditEmployee(employee)}
                                 />
                             ))}
                         </div>
                     </div>
                 </main>
             </div>
+
+            {/* Modal */}
+            {showModal && (
+                <EmployeeModal
+                    employee={editingEmployee}
+                    onClose={handleCloseModal}
+                    onSave={handleSaveEmployee}
+                />
+            )}
         </div>
     );
 }
